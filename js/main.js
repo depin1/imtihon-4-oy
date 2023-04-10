@@ -9,13 +9,6 @@ btn.addEventListener('click', () => {
 })
 
 
-
-
-
-
-
-
-
 let boxbtn = document.querySelector('.for_imgbtn1');
 let boxbtn2 = document.querySelectorAll('.for_imgbtn');
 let ar = document.querySelectorAll('.ar');
@@ -41,7 +34,7 @@ const options = {
     method: 'GET',
     params: { q: 'Bitcoin', lang: 'en', sort_by: 'relevancy', page: '1' },
     headers: {
-        'x-api-key': 'haGR6PyarEfkDWgSU-KGC-4sxMqPSgy8b5-56LMmBD8'
+        'x-api-key': 'DdivjITW7sJuyftaeyTmm05qvmAl_Kp3_Z-gQxpM7v4'
     },
 
 };

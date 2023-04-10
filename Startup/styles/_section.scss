@@ -18,6 +18,24 @@
     max-width: 450px;
 }
 
+.btnpage2 {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+}
+
+.btnpage {
+    background-color: #13141ab4;
+    color: aliceblue;
+    padding: 10px 15px;
+}
+
+.box-page {
+    margin: 0 auto;
+    padding-top: 150px;
+    max-width: 370px;
+}
+
 .image {
     width: 100%;
 }
@@ -49,6 +67,9 @@
 
 .section_box {
     margin-top: 81px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
 }
 
 .section_box-min {
