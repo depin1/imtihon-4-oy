@@ -18,6 +18,14 @@ section {
     color: #232536;
 }
 
+.active {
+    border: 2px solid green;
+}
+
+.notactive {
+    border: 2px solid red;
+}
+
 .section-title {
     font-weight: 700;
     font-size: 48px;

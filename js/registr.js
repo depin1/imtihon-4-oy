@@ -7,3 +7,8 @@ btn.addEventListener('click', () => {
     hambur.classList.toggle('action2');
     hambur2.classList.toggle('action');
 })
+
+
+const form = document.querySelector('.form');
+let input = document.querySelectorAll('.input');
+let sumbit = document.querySelector('.sumbit');
