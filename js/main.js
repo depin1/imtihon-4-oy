@@ -34,3 +34,44 @@ boxbtn2[2].addEventListener('click', () => {
     console.log('hi');
     ar[3].classList.toggle('active');
 })
+
+
+
+const options = {
+    method: 'GET',
+    params: { q: 'Bitcoin', lang: 'en', sort_by: 'relevancy', page: '1' },
+    headers: {
+        'x-api-key': 'haGR6PyarEfkDWgSU-KGC-4sxMqPSgy8b5-56LMmBD8'
+    },
+
+};
+let sectionstart = document.querySelector('.section_start-box');
+let leftbox = document.querySelector('.section_box-left'),
+    forimg = document.querySelector('.left_for-img'),
+    fortitle = document.querySelector('.left_for-title');
+
+
+let url = 'https://api.newscatcherapi.com/v2/search?q=Business';
+fetch(url, options)
+    .then(response => response.json())
+    .then(data => {
+        let dataslice = data.articles.slice(1, 4);
+        let fatchdatatemp = dataslice.map((Business) => {
+            const { media, author, title, summary } = Business;
+
+            return `
+            <div class="section_box-left">
+            <div class="left_for-img">
+                <img class="section_image" src="${media}" alt="api">
+            </div>
+            <div class="left_for-title">
+                <span class="span_nav3">${author}</span>
+                <h3 class="section_title">${title}</h3>
+                <p class="section_text">${summary}</p>
+            </div>
+        </div>
+            `
+        })
+        sectionstart.innerHTML = fatchdatatemp.join()
+    })
+    .catch(err => console.error(err));

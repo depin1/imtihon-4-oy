@@ -222,7 +222,8 @@ header {
 }
 
 .section_image {
-  width: 100%;
+  max-width: 100%;
+  height: 270px;
   padding-bottom: 16px;
 }
 
