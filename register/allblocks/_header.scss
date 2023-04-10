@@ -1,0 +1,216 @@
+.header_nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+}
+
+header {
+    padding: 10px 0;
+    background-color: #232536;
+}
+
+.left_nav {
+    z-index: 5;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+}
+
+.right_nav {
+    display: flex;
+    column-gap: 83px;
+    align-items: center;
+    .menu_item {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        transition: .3s;
+        color: #FFFFFF;
+    }
+    .menu_item:hover {
+        color: rgb(113, 113, 251);
+        text-decoration-line: underline;
+    }
+    .register_header {
+        background-color: aliceblue;
+        border: none;
+        padding: 12px 46px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        color: #232536;
+        transition: .3s;
+        border-radius: 10px;
+    }
+}
+
+.span_nav {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+.span_nav2 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #FFD050;
+}
+
+.header_item {
+    min-height: 400px;
+    max-width: 754px;
+}
+
+.header_title {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 64px;
+    color: #FFFFFF;
+    letter-spacing: -2px;
+    padding: 24px 0;
+}
+
+.btn_header {
+    padding: 16px 48px;
+    background-color: #FFD050;
+    color: #232536;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    border: none;
+    transition: .5s;
+    border-radius: 10px;
+}
+
+.btn_header:hover {
+    background-color: transparent;
+    background-image: linear-gradient(to right, rgba(0, 0, 255, 0.179), rgba(0, 0, 0, 0.292));
+    color: #FFFFFF;
+    border-radius: 30px;
+}
+
+.header_text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    padding: 16px 0 46px 0;
+    color: #FFFFFF;
+    max-width: 599px;
+}
+
+.mini_title-header {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.register_header:hover {
+    background-color: transparent;
+    background-image: linear-gradient(to right, rgba(0, 0, 255, 0.179), rgba(0, 0, 0, 0.292));
+    transform: scale(1.1);
+    color: #FFFFFF;
+    border-radius: 30px;
+    .login {
+        color: #ffffff;
+    }
+}
+
+.header_end-box {
+    width: 100%;
+    min-height: 348px;
+    background-color: #F4F0F8;
+    text-align: center;
+    padding: 80px 0;
+    .end_box-chilled {
+        max-width: 515px;
+        margin: 0 auto;
+    }
+    .startap {
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 64px;
+        letter-spacing: -2px;
+        color: #232536;
+        margin-bottom: 16px;
+    }
+    .end_box-text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: #6D6E76;
+        margin-bottom: 32px;
+    }
+    .end_box {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+}
+
+.hamburger,
+.hamburger2 {
+    display: none;
+}
+
+.hamburger,
+.hamburger2 {
+    width: 20px;
+}
+
+@media (max-width:668px) {
+    .right_nav.active {
+        left: 0;
+    }
+    .logo {
+        width: 100px;
+    }
+    .hamburger2.action {
+        display: block;
+    }
+    .logo {
+        width: 100px;
+    }
+    .hamburger {
+        display: block;
+    }
+    .hamburger.action2 {
+        display: none;
+    }
+    .right_nav {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 20px;
+        position: absolute;
+        background-color: #23253674;
+        width: 90%;
+        height: 80%;
+        left: -100%;
+        top: 0;
+        transition: .3s;
+        .register_header {
+            background-color: blue;
+            color: azure;
+            border: none;
+        }
+    }
+    .menu {
+        flex-direction: column;
+        row-gap: 24px;
+    }
+}
