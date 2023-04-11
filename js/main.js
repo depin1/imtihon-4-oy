@@ -48,7 +48,7 @@ let url = 'https://api.newscatcherapi.com/v2/search?q=Business';
 fetch(url, options)
     .then(response => response.json())
     .then(data => {
-        let dataslice = data.articles.slice(1, 4);
+        let dataslice = data.articles.slice(2, 5);
         let fatchdatatemp = dataslice.map((Business) => {
             const { media, author, title, summary } = Business;
 

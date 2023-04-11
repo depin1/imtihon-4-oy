@@ -16,7 +16,7 @@ const inputadd = document.querySelector('.input');
 const fragments = document.createDocumentFragment();
 let pagenation = document.querySelector('.page');
 pagenation.classList.add('box-page');
-let searchurl = `https://api.newscatcherapi.com/v2/search?q=`;
+let searchurl = `https://api.newscatcherapi.com/v2/search?q=${inputadd.value}`;
 let url = `https://api.newscatcherapi.com/v2/search?q=Hello`;
 
 let page = 1;
@@ -25,13 +25,15 @@ function datafetch() {
 
 
     if (inputadd.value) {
-        url = ` ${searchurl}${inputadd.value}`
-
-        console.log(url);
+        url = searchurl = `https://api.newscatcherapi.com/v2/search?q=${inputadd.value}`;
 
     } else {
         url = 'https://api.newscatcherapi.com/v2/search?q=Apple';
     }
+
+
+
+
     const options = {
         method: 'GET',
         params: { q: 'Bitcoin', lang: 'en', sort_by: 'relevancy', page: '1' },
@@ -44,7 +46,7 @@ function datafetch() {
     fetch(url, options)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            //console.log(data);
             let totalpages = data.total_pages > 10 ? 10 : data.total_pages;
 
             section_box.innerHTML = '';
