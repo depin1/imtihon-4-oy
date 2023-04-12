@@ -39,6 +39,7 @@ function datafetch() {
         params: { q: 'Bitcoin', lang: 'en', sort_by: 'relevancy', page: '1' },
         headers: {
             'x-api-key': `qwlE-bDIIk6b5igSrEoNqjIsSGo_ARCWJ5gbNSYZpWk`
+                //Hw6pgKVbiPAIl-47BYAvkjj-p1lprugR0zwcYyEuzes API new
         },
 
     };
