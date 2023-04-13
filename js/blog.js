@@ -47,11 +47,12 @@ function datafetch() {
     fetch(url, options)
         .then(response => response.json())
         .then(data => {
-            //console.log(data);
+            console.log(data);
             let totalpages = data.total_pages > 10 ? 10 : data.total_pages;
 
             section_box.innerHTML = '';
-            let i = (page - 1) * 4
+            let i = (page - 1) * 4;
+            // console.log(i);
             let dataSlice = data.articles.slice(i, i + 4)
             dataSlice.map((business) => {
                 const { media, author, title, summary } = business;
@@ -110,6 +111,7 @@ function datafetch() {
                     buttonpage.addEventListener('click', (e) => {
                         e.preventDefault();
                         page = i;
+                        // console.log(i);
                         datafetch();
                     })
 
@@ -123,7 +125,7 @@ function datafetch() {
 
 
 datafetch();
-inputadd.addEventListener('keypress', function(e) {
+inputadd.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         datafetch();
     }

@@ -274,12 +274,19 @@ section {
   display: flex;
   -moz-column-gap: 20px;
        column-gap: 20px;
+  align-items: center;
 }
 
 .forname {
   display: flex;
   -moz-column-gap: 5px;
        column-gap: 5px;
+}
+
+.dlete {
+  background-color: red;
+  color: aliceblue;
+  padding: 10px;
 }
 
 .titlebox {

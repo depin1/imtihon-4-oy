@@ -49,6 +49,7 @@ fetch(url).then((response) => response.json()).then((data) => {
 
 })
 
+
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
@@ -58,40 +59,67 @@ form.addEventListener('submit', (e) => {
     let image = document.getElementById('file').files[0];
     const read = new FileReader();
     read.readAsDataURL(image);
-    read.onload = () => {
+    read.onload = (f) => {
+        f.preventDefault();
+
         const imageurl = read.result;
         const datapost = {
             firstname: name,
             lastname: surname,
             email: mail
         }
+
         fetch(url, {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(datapost)
         }).then((response) => response.json()).then((data) => {
             console.log(data);
-            sectionbox2.innerHTML = `
-    <div class="section-box">
-    <div class="section-box-forimg">
-    <img class="image-avatar" src='${imageurl}' alt="...">
-    </div>
-    <div class="section-about">
-        <div class="forname">
-        <h3 class="name">${data.firstname}</h3>
-        <h3 class="surname"> ${data.lastname}</h3>
+            sectionbox2.innerHTML += `
+        <div class="section-box">
+        <div class="section-box-forimg">
+        <img class="image-avatar" src='${imageurl}' alt="...">
         </div>
-        <div class="for-data">
-        <a class="data" href="mailto:">${data.email}</a>
+        <div class="section-about">
+            <div class="forname">
+            <h3 class="name">${data.firstname}</h3>
+            <h3 class="surname"> ${data.lastname}</h3>
+            </div>
+            <div class="for-data">
+            <a class="data" href="mailto:">${data.email}</a>
+            </div>
         </div>
-    </div>
-    </div>
-    
-    `
+        <button class="dlete">Delete</button>
+        </div>
+        
+        `
             box.appendChild(sectionbox2)
         })
-    }
-    box.innerHTML = '';
 
+        // box.innerHTML = '';
+    }
     form.reset();
 })
+
+
+
+
+sectionbox2.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains('dlete')) {
+        datadelete(e.target.classList.contains('dlete')).then(() => {
+            const removebtn = e.target.closest('.allfilles2');
+            removebtn.remove();
+        })
+    }
+})
+
+async function datadelete(delet) {
+    try {
+        await fetch(`${url}${delet}`, {
+            method: 'DELETE'
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}

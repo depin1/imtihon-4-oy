@@ -17,11 +17,18 @@ section {
     padding-top: 65px;
     display: flex;
     column-gap: 20px;
+    align-items: center;
 }
 
 .forname {
     display: flex;
     column-gap: 5px;
+}
+
+.dlete {
+    background-color: red;
+    color: aliceblue;
+    padding: 10px;
 }
 
 .titlebox {
