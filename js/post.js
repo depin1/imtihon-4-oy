@@ -48,6 +48,17 @@ fetch(url).then((response) => response.json()).then((data) => {
     sectionbox.innerHTML = datamap.join('');
 
 })
+sectionbox2.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains('dlete')) {
+        datadelete(e.target.classList.contains('dlete')).then(() => {
+            const removebtn = e.target.closest('.allfilles2');
+            removebtn.remove();
+            sectionbox2.innerHTML = '';
+        })
+    }
+
+})
 
 
 form.addEventListener('submit', (e) => {
@@ -104,15 +115,6 @@ form.addEventListener('submit', (e) => {
 
 
 
-sectionbox2.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (e.target.classList.contains('dlete')) {
-        datadelete(e.target.classList.contains('dlete')).then(() => {
-            const removebtn = e.target.closest('.allfilles2');
-            removebtn.remove();
-        })
-    }
-})
 
 async function datadelete(delet) {
     try {
